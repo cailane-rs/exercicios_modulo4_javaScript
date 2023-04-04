@@ -46,19 +46,15 @@
         pincel.fillRect(0, 266, 600, 133);
     }
 
-    var defineBandeira = 0;
-    var exibeBrasil = 1;
-    var exibeAlemanha = 0;
-
+    var exibeBrasil = true;
 
     function trocaBandeira() {
-        if (defineBandeira == exibeAlemanha) {
-            desenhaBandeiraAlemanha();
-            defineBandeira++;
-        } else if (defineBandeira == exibeBrasil) {
+        if (exibeBrasil) {
             desenhaBandeiraBrasil();
-            defineBandeira--;
+        } else {
+            desenhaBandeiraAlemanha();
         }
+        exibeBrasil = !exibeBrasil; //inverte o valor booleano;
     }
 
     setInterval(trocaBandeira, 3000);
