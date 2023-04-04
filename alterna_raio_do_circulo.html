@@ -20,4 +20,20 @@
         pincel.clearRect(0, 0, 600, 400);
     }
 
+    var raio = 20;
+    var fatorTamanho = 1;
+    function aumentaOuDiminuiCirculo() {
+        if (raio > 30) {
+            fatorTamanho = -1;
+        } else if (raio < 20) {
+            fatorTamanho = 1;
+        }
+
+        limpaTela();
+        desenhaCirculo(300, 200, raio, "yellow");
+        raio = raio + fatorTamanho;
+    }
+
+    setInterval(aumentaOuDiminuiCirculo, 20);
+
 </script>
